@@ -7,7 +7,11 @@ export default new Vuex.Store({
   state: {
     count: 0
   },
-  getters: {},
+  getters: {
+    showNum(state) {
+      return '当前最新的数字[' + state.count + ']'
+    }
+  },
   mutations: {
     add(state) {
       state.count++
@@ -26,22 +30,22 @@ export default new Vuex.Store({
     addAsync(content) {
       setTimeout(() => {
         content.commit('add')
-      },1000)
+      }, 1000)
     },
-    addAsyncN(context,payload) {
+    addAsyncN(context, payload) {
       setTimeout(() => {
-        context.commit('addN',payload)
-      },1000)
+        context.commit('addN', payload)
+      }, 1000)
     },
     subAsync(content) {
       setTimeout(() => {
         content.commit('sub')
-      },1000)
+      }, 1000)
     },
-    subAsyncN(content,payload) {
+    subAsyncN(content, payload) {
       setTimeout(() => {
-        content.commit('subN',payload)
-      },1000)
+        content.commit('subN', payload)
+      }, 1000)
     },
   },
 })
