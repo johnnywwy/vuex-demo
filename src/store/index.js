@@ -22,6 +22,12 @@ export default new Vuex.Store({
       state.count -= payload
     },
   },
-  actions: {},
+  actions: {
+    addAsync(content) {
+      setTimeout(() => {
+        content.commit('add')
+      },2000)
+    }
+  },
   modules: {}
 })

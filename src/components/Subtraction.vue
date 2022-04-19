@@ -20,9 +20,11 @@ export default {
   },
   methods: {
     ...mapMutations(['sub', 'subN']),
+
     btnSub() {
       this.sub()
     },
+
     btnSubN() {
       this.subN(3)
     }
