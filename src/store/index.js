@@ -32,7 +32,17 @@ export default new Vuex.Store({
       setTimeout(() => {
         context.commit('addN',payload)
       },1000)
-    }
+    },
+    subAsync(content) {
+      setTimeout(() => {
+        content.commit('sub')
+      },1000)
+    },
+    subAsyncN(content,payload) {
+      setTimeout(() => {
+        content.commit('subN',payload)
+      },1000)
+    },
   },
   modules: {}
 })
