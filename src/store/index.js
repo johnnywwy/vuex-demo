@@ -26,7 +26,12 @@ export default new Vuex.Store({
     addAsync(content) {
       setTimeout(() => {
         content.commit('add')
-      },2000)
+      },1000)
+    },
+    addAsyncN(context,payload) {
+      setTimeout(() => {
+        context.commit('addN',payload)
+      },1000)
     }
   },
   modules: {}

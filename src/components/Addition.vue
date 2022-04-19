@@ -4,7 +4,8 @@
     <h4>当前count的值为：{{ $store.state.count }}</h4>
     <button @click="btnAdd">+1</button> |
     <button @click="btnAddN">+N</button> |
-    <button @click="btnAddAsync1">异步1秒 +1</button>
+    <button @click="btnAddAsync1">异步1秒 +1</button> |
+    <button @click="btnAddAsyncN">异步1秒 +N</button>
   </div>
 </template>
 
@@ -20,6 +21,9 @@ export default {
     },
     btnAddAsync1(){
       this.$store.dispatch('addAsync')
+    },
+    btnAddAsyncN(){
+      this.$store.dispatch('addAsyncN',3)
     }
   }
 }
