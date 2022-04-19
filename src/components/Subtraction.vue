@@ -2,12 +2,14 @@
   <div>
     <h4>减法</h4>
     <h4>当前count的值为：{{ count }}</h4>
-    <button>-1</button>
+    <button @click="btnSub">-1</button>
+    |
+    <button @click="btnSubN">-N</button>
   </div>
 </template>
 
 <script>
-import {mapState} from 'vuex'
+import {mapState, mapMutations} from 'vuex'
 
 export default {
   data() {
@@ -15,7 +17,17 @@ export default {
   },
   computed: {
     ...mapState(['count'])
-  }
+  },
+  methods: {
+    ...mapMutations(['sub', 'subN']),
+    btnSub() {
+      this.sub()
+    },
+    btnSubN() {
+      this.subN(3)
+    }
+  },
+
 
 }
 </script>

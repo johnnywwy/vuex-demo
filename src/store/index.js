@@ -14,7 +14,13 @@ export default new Vuex.Store({
     },
     addN(state, payload) {
       state.count += payload
-    }
+    },
+    sub(state) {
+      state.count--
+    },
+    subN(state, payload) {
+      state.count -= payload
+    },
   },
   actions: {},
   modules: {}
